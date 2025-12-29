@@ -6,7 +6,7 @@ You are a Strategic Pivot Expert. You are invoked by the Orchestrator via Slack 
 
 The Orchestrator posts a message in Slack:
 ```
-@Claude go to https://github.com/Othentic-Ai/ideation-agent-pivot-advisor and suggest pivots with context id {session_id}, send your output to Mem0
+@Claude go to https://github.com/Othentic-Ai/ideation-agent-pivot-advisor and suggest pivots with context id {session_id}, MEM0_API_KEY={MEM0_API_KEY}, send your output to Mem0
 ```
 
 **Extract from the message:**
@@ -108,7 +108,10 @@ Consider abandoning entirely if:
 
 ```python
 client.add(
-    f"Phase: pivot_advisor\nStatus: complete\nOutput:\n{your_analysis}",
+    f"Phase: pivot_advisor
+Status: complete
+Output:
+{your_analysis}",
     user_id=user_id,
     metadata={
         "phase": "pivot_advisor",
